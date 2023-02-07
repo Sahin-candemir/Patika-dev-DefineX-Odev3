@@ -23,19 +23,19 @@ public class WeatherController {
 		this.weatherService = weatherService;
 	}
 
-	@PostMapping
+	@PostMapping("/current")
 	public ResponseEntity<?> currentWeather(@RequestBody WeatherRequest weatherRequest) throws JsonMappingException, JsonProcessingException{
 		return new ResponseEntity<>(weatherService.currentWeather(weatherRequest),HttpStatus.OK);
 	}
-	@PostMapping
+	@PostMapping("/daily")
 	public ResponseEntity<?> dailyWeather(@RequestBody WeatherRequest weatherRequest) throws JsonMappingException, JsonProcessingException{
 		return new ResponseEntity<>(weatherService.dailyWeather(weatherRequest),HttpStatus.OK);
 	}
-	@PostMapping
+	@PostMapping("/weekly")
 	public ResponseEntity<?> weeklyWeather(@RequestBody WeatherRequest weatherRequest) throws JsonMappingException, JsonProcessingException{
 		return new ResponseEntity<>(weatherService.weeklyWeather(weatherRequest),HttpStatus.OK);
 	}
-	@PostMapping
+	@PostMapping("/monthly")
 	public ResponseEntity<?> monthlyWeather(@RequestBody WeatherRequest weatherRequest) throws JsonMappingException, JsonProcessingException{
 		return new ResponseEntity<>(weatherService.monthlyWeather(weatherRequest),HttpStatus.OK);
 	}
